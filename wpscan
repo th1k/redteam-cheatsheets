@@ -1,0 +1,15 @@
+# Basic usage
+wpscan --url http://site.com --verbose
+
+# Scan with api
+# Register api in https://wpscan.com/register
+wpscan --url http://site.com --api-token abc123cba321
+
+# Disable SSL
+wpscan --url http://site.com --verbose --disable-tls-checks
+
+# Enumerate vulnerable plugins, users, vulrenable themes, timthumbs
+wpscan --url http://site.com --enumerate vp,u,vt,tt --verbose
+
+# Bruteforce Login
+wpscan --url http://site.com -U admin -P /usr/share/wordlists/rockyou.txt
