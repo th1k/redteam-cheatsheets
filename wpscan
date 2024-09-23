@@ -8,6 +8,9 @@ wpscan --url http://site.com --api-token abc123cba321
 # Disable SSL
 wpscan --url http://site.com --verbose --disable-tls-checks
 
+# Bypass WAF
+wpscan --url http://site.com --verbose --random-user-agent
+
 # Enumerate vulnerable plugins, users, vulrenable themes, timthumbs
 wpscan --url http://site.com --enumerate vp,u,vt,tt --verbose
 
