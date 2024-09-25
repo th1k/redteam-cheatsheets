@@ -1,0 +1,2 @@
+# General Usage | Fuzz directory
+ffuf -u https://site.com/FUZZ -w /usr/share/wordlists/dirb/common.txt
