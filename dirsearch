@@ -1,0 +1,20 @@
+# Default Search
+dirsearch -u https://site.com/
+
+# Search with extensions
+dirsearch -u https://site.com/ -e php
+
+# Exclude HTTP response codes
+dirsearch -u https://site.com/ -e php -x 403,301,302,502
+
+# Search with custom Wordlist
+dirsearch -u https://site.com/ -e php -x 403,301,302,502 -w /usr/share/wordlists/wfuzz/general/commmon.txt
+
+# Search using recursive mode
+dirsearch -u https://site.com/ -e php -x 403,301,302,502 -r
+
+# Search using recursive mode with high level
+dirsearch -u https://site.com/ -e php -x 403,301,302,502 -r -R 3
+
+# Ref
+https://irfaanshakeel.medium.com/dirsearch-to-find-hidden-web-directories-d0357fbe47b0
