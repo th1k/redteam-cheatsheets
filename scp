@@ -1,0 +1,2 @@
+# Upload file from local to server
+scp filefromuser1 user2@10.10.10.123:/home/user2/filefromuser1
