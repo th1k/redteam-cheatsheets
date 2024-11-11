@@ -1,4 +1,5 @@
 # Exec PS1 as Admin
+
 @ECHO OFF
 SET ThisScriptsDirectory=%~dp0
 SET PowerShellScriptPath=%ThisScriptsDirectory%PutTheNameOfYourPowerShellScriptHere.ps1
