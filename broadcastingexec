@@ -1,0 +1,2 @@
+# Exec Calc
+IEX ${env:s*t}$([char]0x005c)S*3*\calc.$([char]0x002a)
