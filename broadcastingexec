@@ -1,2 +1,9 @@
+# Print Path
+echo $env:?????????T => SYSTEMROOT
+echo ${env:s*t}
+
+# UTF 16 to Ascii (https://r12a.github.io/app-conversion/)
+echo ${env:s*t}$([char]0x005c)System32 => C:\WINDOWS\System32
+
 # Exec Calc
 IEX ${env:s*t}$([char]0x005c)S*3*\calc.$([char]0x002a)
