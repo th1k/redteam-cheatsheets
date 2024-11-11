@@ -1,0 +1,13 @@
+# Update Database
+searchsploit -u
+
+# Search by Name
+searchsploit vsftpd 2.
+searchsploit python 3.
+searchsploit php
+
+# Make a copy of the exploit
+searchsploit -m unix/remote/49757.py
+
+# Show exploit content only
+searchsploit -x unix/remote/49757.py
