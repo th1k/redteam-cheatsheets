@@ -16,3 +16,6 @@ wpscan --url http://site.com --enumerate vp,u,vt,tt --verbose
 
 # Bruteforce Login
 wpscan --url http://site.com -U admin -P /usr/share/wordlists/rockyou.txt
+
+# Ignore Redirect (IP to Domain)
+wpscan --url http://123.1.1.101/ --ignore-main-redirect
