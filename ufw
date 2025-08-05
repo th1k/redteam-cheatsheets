@@ -1,0 +1,5 @@
+# Allow from ip/port to port 80
+sudo ufw allow from 147.185.221.24:59112 to any port 80
+
+# Allow from ip and port to port 80
+sudo ufw allow from 147.185.221.24 port 59112 to any port 80
