@@ -1,0 +1,2 @@
+#JetDirect Services
+((services.software.product:JetDirect) and services.service_name:IPP) and location.country:"Thailand"
