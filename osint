@@ -1,0 +1,259 @@
+# OSINT Tools
+
+- [Bookmarks](https://tools.myosint.training/): Comprehensive list of various OSINT bookmarks.
+- [OSINT Framework](https://osintframework.com/): A comprehensive collection of OSINT tools and resources.
+
+## General OSINT
+
+- [IntelTechniques Tools](https://inteltechniques.com/tools/): A suite of OSINT tools for various investigative needs.
+- [Online Investigation Toolkit](https://www.bellingcat.com/resources/2024/09/24/bellingcat-online-investigations-toolkit/): A curated list of tools used by investigative journalists
+- [CyberSudo OSINT Toolkit](https://docs.google.com/spreadsheets/d/1EC0sKA_W9znzsxUt0wye9UYtyATXw5m8): List of OSINT Websites
+- [GeoGuesser Top Tips](https://somerandomstuff1.wordpress.com/2019/02/08/geoguessr-the-top-tips-tricks-and-techniques/): Top Tips and Tricks for Geolocation
+- [Google Dorks](https://dorksearch.com/): Helps you search google more efficiently
+- [Country Specific Resources](https://digitaldigging.org/osint/): To help you specifically look for things a certain country
+- [Distributed Denial of Secrets](https://ddosecrets.com/): Leaked Data
+
+### Search Engines
+
+- [Carrot2](https://search.carrot2.org/#/search/web): organizes your search results into topics
+- [etools](https://www.etools.ch/): metasearch engine
+
+### Username and Email Investigation
+
+- [What's My Name](https://whatsmyname.app/): Search for usernames across multiple platforms.
+- [Maigret](https://github.com/soxoj/maigret): Collect profiles from various sites by username.
+- [NameCheckup](https://namecheckup.com/): Find Available Username
+- [Holehe](https://github.com/megadose/holehe): Check if an email is registered on online platforms.
+- [EmailRep](https://emailrep.io/): Check email reputation and associated data.
+- [Namechk](https://namechk.com/): Check username availability across multiple platforms.
+- [Hunter.io](https://hunter.io/): Find email addresses associated with a domain.
+- [Sherlock](https://github.com/sherlock-project/sherlock): Find usernames across social networks.
+- [PhoneInfoga](https://github.com/sundowndev/phoneinfoga): Information gathering framework for phone numbers
+- [ContactOut](https://contactout.com/): Discover Email Addresses
+- [Emailable](https://emailable.com/): Verify if Email exists
+- [GetProspect Extension](https://chromewebstore.google.com/detail/email-finder-getprospect/bhbcbkonalnjkflmdkdodieehnmmeknp?hl=en)
+- [SignalHire Extension](https://chrome.google.com/webstore/detail/signalhire-find-email-or/aeidadjdhppdffggfgjpanbafaedankd)
+- [OSINT Industries](https://osint.industries/): Email/username/phone lookups
+- [Mugetsu](https://mugetsu.io/): X/Twitter username history & meme coin lookups
+
+### People Search
+
+- [WhitePages](https://www.whitepages.com/): Find people and contact information
+- [TruePeopleSearch](https://www.truepeoplesearch.com/): Free people search in the U.S.
+- [Pipl](https://pipl.com/): Deep web people search (Note: primarily a paid service).
+- [Spokeo](https://www.spokeo.com/): People search engine.
+- [Webmii](https://webmii.com/): People search engine
+- [Clearbit](https://clearbit.com/): Data enrichment for companies and individuals.
+- [FaceCheck](https://facecheck.id/): Find people by their picture
+
+### Social Media
+
+- [Search4Faces](https://search4faces.com/): search for a face in social media.
+- [Picuki](https://www.picuki.com/): View Instagram profiles and posts without an account.
+- [Twint](https://github.com/twintproject/twint): Advanced X/Twitter scraping (maintenance intermittent; breaks when the API changes).
+- [snscrape](https://github.com/snscrape/snscrape): Actively‑maintained CLI scraper for X/Twitter, Reddit, Telegram, and more.
+- [Social Blade](https://socialblade.com/): Analytics for YouTube, Twitch, Instagram, and more.
+- [Facebook Graph Search](https://inteltechniques.com/tools/Facebook.html): Advanced Facebook search techniques.
+- [Facebook Friends](https://sowsearch.info/): graph search alternative
+- [Facebook ID Lookup](https://lookup-id.com/): to find ID of a user on Facebook
+- [Facebook Search](https://whopostedwhat.com/): searching for posts
+
+### Phone Number
+
+- [TrueCaller](https://www.truecaller.com/): Caller ID and Spam Blocking App
+- [CallerIDTest](https://calleridtest.com/): Phone Search
+- [Infobel](https://infobel.com/): Phone search outside of USA
+- [ThatsThem](https://thatsthem.com/): Reverse phone search
+- [Advanced Background Checks](https://www.advancedbackgroundchecks.com/): shows all people that used the phone number
+
+### Public Records and Company Information
+
+- [OpenCorporates](https://opencorporates.com/) : World's largest open database of companies.
+- [SEC EDGAR](https://www.sec.gov/edgar.shtml): U.S. Securities and Exchange Commission's database for company filings.
+
+### Leaks
+
+- [Have i been pwned](https://haveibeenpwned.com/)
+- [PwdQuery](https://pwdquery.xyz/)
+- [LeakCheck](https://leakcheck.io/)
+- [Scattered Secrets](https://scatteredsecrets.com/)
+- [Dehashed](https://dehashed.com/)
+- [IntelX](https://intelx.io/)
+- [Phonebook](https://phonebook.cz/)
+- [LeakPeek](https://leakpeek.com/): Database breach lookups
+- [Snusbase](https://snusbase.com/): Database breach lookups
+- [BreachDirectory](https://breachdirectory.org/): Search credentials exposed in recent breaches
+- [Snusmap](https://snusmap.com/): Visual browser for leaked‑data collections
+- [Cavalier (Hudson Rock)](https://cavalier.hudsonrock.com/): Infostealer lookups
+
+## Cryptocurrency OSINT
+
+### Blockchain Analysis
+
+- [Blockchain.com Explorer](https://www.blockchain.com/explorer): Bitcoin and crypto search engine
+- [Etherscan](https://etherscan.io/): Ethereum blockchain explorer
+- [BSCScan](https://bscscan.com/): BNB Smart Chain explorer
+- [PolygonScan](https://polygonscan.com/): Polygon blockchain explorer
+- [Cielo](https://cielo.io/): Multi-chain wallet tracking (EVM, Bitcoin, Solana, Tron, etc)
+- [Blockchair](https://blockchair.com/): Bitcoin block explorer
+- [Solscan](https://solscan.io/): Solana blockchain explorer
+- [Dune](https://dune.com/): Analytics platform to query blockchain data
+- [MetaSuites](https://metasuites.io/): Chrome extension for additional data on block explorers
+- [Impersonator](https://impersonator.xyz/): Chrome extension to spoof login to dApps
+
+### Wallet Investigation
+
+- [BitcoinAbuse](https://www.bitcoinabuse.com/): Track bitcoin addresses used for scams
+- [Wallet Explorer](https://www.walletexplorer.com/): Bitcoin wallet transaction clustering
+- [Chainalysis](https://www.chainalysis.com/): Professional blockchain analysis platform
+- [Crystal Blockchain](https://crystalblockchain.com/): Blockchain analytics and monitoring
+
+### Transaction Tracking
+
+- [Whale Alert](https://whale-alert.io/): Track large crypto transactions
+- [BitQuery](https://bitquery.io/): Blockchain data analysis and APIs
+- [GraphSense](https://graphsense.info/): Cryptocurrency analytics platform
+- [CipherTrace](https://ciphertrace.com/): Cryptocurrency intelligence
+- [TRM](https://www.trmlabs.com/): Create graphs for addresses/transactions
+- [Arkham](https://www.arkhamintelligence.com/): Multichain block explorer, entity labels, graphs, alerts
+- [MetaSleuth](https://metasleuth.io/): Similar to TRM but intended for retail users
+- [CryptoTaxCalculator](https://cryptotaxcalculator.io/): Track PNL for an address
+
+### Bridge Monitoring
+
+- [Range](https://range.org/): CCTP bridge explorer
+- [Pulsy](https://pulsy.io/): Bridge explorer aggregator
+- [Socketscan](https://socketscan.io/): EVM bridge explorer
+
+### NFT Analysis
+
+- [OpenSea](https://opensea.io/): NFT marketplace explorer
+- [NFTScan](https://www.nftscan.com/): Multi-chain NFT explorer
+- [Nansen](https://www.nansen.ai/): NFT analytics platform
+- [DappRadar](https://dappradar.com/): Track NFT sales and marketplace activity
+
+### Exchange Intelligence
+
+- [CoinGecko](https://www.coingecko.com/): Cryptocurrency market data
+- [CoinMarketCap](https://coinmarketcap.com/): Price tracking and market analysis
+- [Binance Intelligence](https://www.binance.com/en/feed): Exchange activity monitoring
+- [Glassnode](https://glassnode.com/): On-chain market intelligence
+
+## Media Intelligence
+
+### Image Analysis
+
+- [Google reverse image search](https://images.google.com/): reverse image search engine.
+- [TinEye](https://tineye.com/): reverse image search.
+- [Yandex images](https://yandex.com/images/): effective for Russian and eastern European content.
+- [PimEyes](https://pimeyes.com/en): change a picture and then search
+- [Forensically](https://29a.ch/photo-forensics/): ToolSet for digital image forensics.
+- [Getty](https://www.gettyimages.com/)
+- [Shutterstock](https://www.shutterstock.com/)
+- [Alamy](https://www.alamy.com/)
+
+### Browser Extensions
+
+- [Fake News Debunker by InVID & WeVerify](https://chrome.google.com/webstore/detail/fake-news-debunker-by-inv/mhccpoafgdgbhnjfhkcmgknndkeenfhe): Verifies images and videos.
+- [RevEye Reverse Image Search](https://chrome.google.com/webstore/detail/reveye-reverse-image-sear/kejaocbebojdmebagkjghljkeefgimdj): Reverse image search extension.
+- [EXIF Viewer Pro](https://chrome.google.com/webstore/detail/exif-viewer-pro/mmbhfeiddhndihdjeganjggkmjapkffm): View EXIF data in-browser.
+- [Wayback Machine Extension](https://chrome.google.com/webstore/detail/wayback-machine/fpnmgdkabkmnadcjpehmlllkndpkmiak): Quick access to archived web pages.
+- [Search by Image](https://chromewebstore.google.com/detail/search-by-image/cnojnbdhbhnkbcieeekonklommdnndci?hl=en): reverse image search tool, with support for various search engines
+
+### Video Analysis
+
+- [YouTube Data Viewer](https://citizenevidence.amnestyusa.org/): Extract metadata from YouTube videos.
+- [InVID & WeVerify Video Verification Tool](https://www.invid-project.eu/tools-and-services/invid-verification-plugin/): Browser extension for video verification.
+- [Frame-by-Frame Video Player](https://sourceforge.net/projects/framebyframevideo/): Analyze videos frame by frame.
+- [YouTube Geo Tag](https://mattw.io/youtube-geofind/location): Find location of a video via geo tags
+
+### Metadata Extraction
+
+- [Jimpl](https://jimpl.com/)
+- [ExifTool](https://exiftool.org/): Read, write, and edit metadata.
+- [Jeffrey's image metadata viewer](http://exif.regex.info/exif.cgi): online image metadata viewer.
+- [MediaInfo](https://mediaarea.net/en/MediaInfo): Technical and tag information about video or audio files.
+- [FOCA](https://www.elevenpaths.com/labstools/foca): Analyze metadata and hidden information in documents.
+- [Metagoofil](https://www.edge-security.com/metagoofil.php): Extract metadata from public documents.
+
+## GeoSpatial Intelligence
+
+### Satellite Imagery and Mapping
+
+- [Google Maps](https://www.google.com/maps): Mapping and satellite imagery.
+- [Bing Maps](https://www.bing.com/maps/): Alternative mapping service.
+- [NOAA Maps](https://coast.noaa.gov/dataviewer/#/imagery/search/): Coastal imagery.
+- [NASA FIRMS](https://firms.modaps.eosdis.nasa.gov/map/): Fire data and HotSpots.
+- [OpenStreetMap](https://www.openstreetmap.org/): Open-source map of the world.
+- [Sentinel Hub EO Browser](https://apps.sentinel-hub.com/eo-browser/): Access to satellite imagery from Sentinel and Landsat.
+- [NASA Worldview](https://worldview.earthdata.nasa.gov/): Satellite imagery from NASA.
+- [Zoom Earth](https://zoom.earth/) : Live satellite images and weather data.
+- [Wayback Imagery](https://livingatlas.arcgis.com/wayback/) : Historical satellite images.
+- [Windy](https://www.windy.com/): Live weather map.
+- [Open Infrastructure Map](https://openinframap.org/): Visualize global infrastructure(Water, Power, Gas, etc) networks
+
+### Tools and Applications
+
+- [Mapillary](https://www.mapillary.com/app): CrowdSourced street-level imagery.
+- [KartaView](https://kartaview.org/): Open-source street-level imagery.
+- [Overpass Turbo](https://overpass-turbo.eu/): Advanced querying of OpenStreetMap data.
+- [SunCalc](https://www.suncalc.org/): Sun position calculator for Chronolocation.
+- [PeakVisor](https://peakvisor.com/): Identify mountain peaks.
+- [GeoNames](https://www.geonames.org/): Geographical database.
+- [SAS Planet](https://www.sasgis.org/sasplaneta/): Satellite imagery viewing application.
+- [Marble](https://marble.kde.org/): Virtual globe and world atlas.
+
+### Street View
+
+- [Google Street View](https://www.google.com/maps): Street-level imagery.
+- [Apple Maps](https://maps.apple.com/): Alternative mapping service.
+- [Yandex Maps](https://yandex.com/maps/): Russian mapping service with street view.
+- [Baidu Maps](https://map.baidu.com/): Chinese mapping service.
+
+### Flight OSINT
+
+- [FlightRadar](https://www.flightradar24.com/)
+- [FlightAware](https://www.flightaware.com/)
+- [RadarBox](https://www.radarbox.com/)
+- [ADSBExchange](https://www.adsbexchange.com/): Unfiltered community ADS‑B flight tracking feed
+- [AirFrames](https://www.airframes.org/)
+
+## Maritime OSINT
+
+- [MarineTraffic](https://www.marinetraffic.com/): Live AIS vessel tracking
+- [VesselFinder](https://www.vesselfinder.com/): Global ship movements and port calls
+- [FleetMon](https://www.fleetmon.com/): Historical AIS data and analytics
+
+## AI‑Assisted OSINT Platforms
+
+- [Cylect](https://www.cylect.io/): AI‑powered entity extraction and link‑analysis workspace
+- [Fivecast Matrix](https://www.fivecast.com/products/matrix/): Generative‑AI triage and risk scoring for large social‑media datasets
+- [C2PA](https://c2patool.pixelstream.com/): to verify if image was generated via AI
+- [CarNet](https://carnet.ai/): identify car models via AI
+
+## Archiving & Snapshots
+
+- [archive.today](https://archive.today/): One‑page content archiver with screenshot capability
+- [Memento Timemap](https://timetravel.mementoweb.org/): Aggregate index of web archives for any URL
+- [URLScan.io](https://urlscan.io/): On‑demand webpage scan with full resource map and screenshot
+
+## Additional Tools
+
+### IP and Network Analysis
+
+- [Spur](https://spur.us/): IP lookups and tracking
+
+### Social Media Intelligence
+
+- [Discord ID](https://discord.id/): Basic Discord account information
+- [TelegramDB Search Bot](https://t.me/TGdb_bot): Basic Telegram OSINT
+
+### Infrastructure & Attack‑Surface OSINT
+
+- [Shodan](https://www.shodan.io/): Search engine for internet‑connected devices and services
+- [Censys](https://search.censys.io/): Enumerate hosts and digital certificates across the internet
+- [GreyNoise](https://viz.greynoise.io/): Distinguish background internet noise from targeted scans
+- [SecurityTrails](https://securitytrails.com/): Passive DNS records and asset discovery
+- [SpiderFoot](https://www.spiderfoot.net/): Automated OSINT reconnaissance and correlation (self‑host or SaaS)
+- [theHarvester](https://github.com/laramies/theHarvester): Subdomain, email, and metadata harvesting
+- [Recon‑ng](https://github.com/lanmaster53/recon-ng): Web‑based recon framework
