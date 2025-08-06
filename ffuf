@@ -2,6 +2,9 @@
 # Fuzz directory
 ffuf -u https://site.com/FUZZ -w /usr/share/wordlists/dirb/common.txt
 
+# Fuzz without having wordlist local
+ffuf -w <(curl -s https://raw.githubusercontent.com/danielmiessler/SecLists/refs/heads/master/Discovery/Web-Content/common.txt) -u https://target.com/FUZZ -fs -89 -fc 403
+
 # Adding classical header (some WAF bypass)
 ffuf -c -w "/usr/share/wordlists/dirb/common.txt:FILE" -H "X-Originating-IP: 127.0.0.1, X-Forwarded-For: 127.0.0.1, X-Remote-IP: 127.0.0.1, X-Remote-Addr: 127.0.0.1, X-Client-IP: 127.0.0.1" -fs 5682,0 -u https://site.com/FUZZ
 
