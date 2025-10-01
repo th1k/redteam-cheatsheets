@@ -3,3 +3,11 @@ iptables -A INPUT -s st-performer.gl.at.ply.gg:59112 -p tcp --dport 8080 -j ACCE
 
 # Allow traffic from source IP 192.168.1.100 and source port 12345 to destination IP 192.168.1.200 on port 80
 iptables -A INPUT -s 147.185.221.24 -p tcp --sport 59112 -d 192.168.1.200 --dport 80 -j ACCEPT
+
+iptables -A INPUT -p tcp -s 103.x.x.x --dport 80 -j ACCEPT
+
+iptables -A INPUT -p tcp --dport 80 -j DROP
+
+iptables -A INPUT -p tcp -m string --string test.telebit.io --algo kmp --dport 80 -j DROP
+
+iptables -A INPUT -p tcp -s $(dig +short test-71.telebit.io) --dport 80 -j ACCEPT
